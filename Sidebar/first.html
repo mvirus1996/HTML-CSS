@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <title>Sidebar</title>
+</head>
+<body>
+    <div id="sidebar">
+        <div id="logo">
+            Logo
+        </div>
+        <hr>
+        <ul>
+            <li>
+                <p class="title">
+                    Account
+                    <span class="caret down"></span>
+                </p>
+                
+                <ul class="downlist">
+                    <li><a href="#">Create Account</a></li>
+                    <li><a href="#">Display Account</a></li>
+                    <li><a href="#">Edit Account</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <p class="title">
+                    Employee
+                    <span class="caret down"></span>
+                </p>
+
+                <ul class="downlist">
+                    <li><a href="#">Create Employee</a></li>
+                    <li><a href="#">Display Employee</a></li>
+                    <li><a href="#">Edit Employee</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <p class="title">
+                    Customer
+                    <span class="caret down"></span>
+                </p>
+
+                <ul class="downlist">
+                    <li><a href="#">Create Customer</a></li>
+                    <li><a href="#">Display Customer</a></li>
+                    <li><a href="#">Edit Customer</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <p class="title">
+                    Candidate
+                    <span class="caret down"></span>
+                </p>
+
+                <ul class="downlist">
+                    <li><a href="#">Create Candidate</a></li>
+                    <li><a href="#">Display Candidate</a></li>
+                    <li><a href="#">Edit Candidate</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <p class="title">
+                    Job Requirement
+                    <span class="caret down"></span>
+                </p>
+
+                <ul class="downlist">
+                    <li><a href="#">Create Job Req</a></li>
+                    <li><a href="#">Display Job Req</a></li>
+                    <li><a href="#">Edit Job Req</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="burger" onclick="showNav()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <script>
+        
+        function showNav(){
+            var divs = document.getElementById("burger");
+            if(divs.classList.contains("active")){
+                divs.classList.remove("active");
+                var uls = document.getElementById("sidebar").style.display = "none";
+            }
+            else{
+                divs.classList.add("active");
+                var uls = document.getElementById("sidebar").style.display = "block";
+            }
+        }
+
+        var alist = document.querySelectorAll('a');
+        for(var i = 0; i < alist.length; i++)
+            alist[i].addEventListener("click", function(){
+                document.getElementById("sidebar").style.display = "none";
+                document.getElementById("burger").classList.remove("active");
+            });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Responsive Nav</title>
+</head>
+<body>
+    <nav>
+        <div id="logo">
+            Logo
+        </div>
+        <ul>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Readme</a></li>
+        </ul>
+        <div id="burger" onclick="showNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <script>
+        
+        function showNav(){
+            var divs = document.getElementById("burger");
+            if(divs.classList.contains("active")){
+                divs.classList.remove("active");
+                var uls = document.querySelectorAll("nav ul")[0].style.display = "none";
+            }
+            else{
+                divs.classList.add("active");
+                var uls = document.querySelectorAll("nav ul")[0].style.display = "flex";
+            }
+        }
+        var anc = document.getElementsByTagName("a");
+        
+        for (var i = 0; i < anc.length; i++)
+            anc[i].addEventListener('click', navClicked);
+
+        function navClicked(){
+            var divs = document.getElementById("burger");
+            if(divs.classList.contains("active")){
+                divs.classList.remove("active");
+                var uls = document.querySelectorAll("nav ul")[0].style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

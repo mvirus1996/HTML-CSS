@@ -1,0 +1,135 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+#logo{
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    padding: 20px 50px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 2px;
+}
+
+hr{
+    border-color:rgba(207, 203, 203, 0.425);
+}
+
+.caret {
+    width: 0;
+    height: 0;
+    display: inline-block;
+    border: 7px solid transparent;
+}
+
+.caret.down{
+    border-top-color: white;
+}
+
+.caret.up{
+    border-bottom-color: white;
+}
+
+#sidebar{
+    background: #7f8c8d;
+    width: 250px;
+    min-height: 100vh;
+}
+
+#sidebar ul{
+    padding: 10px;
+}
+
+#sidebar ul .title{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+#sidebar ul .title:hover{
+    background: #ecf0f128;
+}
+
+#sidebar ul li:hover .downlist{
+    display: block;
+}
+
+#sidebar ul li .downlist{
+    display: none;
+}
+
+#sidebar ul li .downlist li{
+    list-style: none;
+    padding: 5px;
+    margin: 10px 0px;
+}
+
+#sidebar ul li .downlist li a{
+    text-decoration: none;
+    font-size: 17px;
+    color: white;
+    padding: 10px 25px;
+}
+
+#sidebar ul li .downlist li a:hover{
+    background: #ecf0f128;
+}
+
+#burger{
+    display: none;
+    margin: 15px 10px;
+    width: 50px;
+    margin: 10px;
+}
+
+#burger div{
+    border: 1px solid black;
+    background-color: black;
+    width: 40px;
+    height: 5px;
+    margin: 5px;
+    transition: 0.5s;
+}
+
+#burger.active{
+    position: absolute;
+    left: 50%;
+    z-index: 10;
+}
+
+#burger.active div:nth-child(2){
+    display: none;
+}
+
+#burger.active div:first-child{
+    transform: translateY(10px) rotateZ(45deg);
+}
+
+#burger.active div:last-child{
+    transform: rotateZ(135deg);
+}
+
+
+@media (max-width: 980px){
+    #sidebar{
+        display: none;
+    }
+
+    #burger{
+        display: block;
+    }
+}

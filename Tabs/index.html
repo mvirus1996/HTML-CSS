@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href='style.css'>
+</head>
+<body>
+    <h1 class="title">Tabs</h1>
+    <div class="tabContainer">
+        <div class="buttonContainer">
+            <button onclick="javascript:showPannel(0)">Tab 1</button>
+            <button onclick="javascript:showPannel(1)">Tab 2</button>
+            <button onclick="javascript:showPannel(2)">Tab 3</button>
+            <button onclick="javascript:showPannel(3)">Tab 4</button>
+        </div>
+        <div class="tabPannel">Tab1: Content</div>
+        <div class="tabPannel">Tab2: Content</div>
+        <div class="tabPannel">Tab3: Content</div>
+        <div class="tabPannel">Tab4: Content</div>
+    </div>
+
+    <script>
+        var tabButton = document.getElementsByTagName("button");
+        var tabPannel = document.getElementsByClassName("tabPannel");
+
+        function showPannel(pannelIndex){
+            for(var i = 0; i<tabButton.length; i++){
+                tabButton[i].style.backgroundColor='white';
+                tabButton[i].style.color='';
+            }
+            tabButton[pannelIndex].style.backgroundColor="yellow";
+            tabButton[pannelIndex].style.color='blue';
+
+            for(var i = 0; i<tabPannel.length; i++){
+                tabPannel[i].style.display="none";
+            }
+            tabPannel[pannelIndex].style.display = "block";
+            tabPannel[pannelIndex].style.backgroundColor="yellow";
+            //tabPannel[pannelIndex].style.height="100vh";
+        }
+    </script>
+</body>
+</html>
